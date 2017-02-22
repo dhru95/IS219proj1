@@ -1,0 +1,91 @@
+<html>
+<style>
+fieldset { margin:auto; width:80%; }
+label    { background:yellow; float:left; width:10em;}
+</style>
+
+<script>
+function confirm()  {
+	if(document.getElementById("pwd").value != document.getElementById("pwd2").value)
+	{
+		document.getElementById('pwd2').value = "";
+		document.getElementById('pwd').focus();
+		document.getElementById('warn').innerHTML = "Passwords Don't Match!";
+	}
+	else
+	{
+		document.getElementById('warn').innerHTML = "";
+	}}	
+</script>
+
+<form   action = "grades.php" oninput = "A1output.value = A1input.value; A2output.value = A2input.value;" >
+
+<fieldset><legend>GRADES update form</legend>
+	<label for "pwd" >Password:</label>
+	<input type=password name="pwd"   id="pwd"
+		placeholder="Instrctor's password"
+		autocomplete=off  autofocus=on   required   >
+		<br><br>
+	
+	<label for "pwd2" >Confirm Password:</label>
+	<input type=password name="pwd2"   id="pwd2"
+		placeholder=" Enter password again"
+		autocomplete=off  required onblur="confirm()"  >
+		<br><br>
+		
+	<span id="warn" style="color:red"> </span>
+	<br><br>
+
+	<label for "user" >Username:</label>
+	<input type=text name="user"   id="user"
+		placeholder="Student's username"
+		autocomplete=off required   >
+	<br><br>
+
+	<label for "course" >Course:</label>
+	<input type=text name="course"   id="course"
+		autocomplete=off>
+	<br><br>
+
+<fieldset><legend>Enter GRADES INFO</legend>
+	<label for "A1" >A1:</label> 
+	<input  name="A1input" type="range"  value="0" step=1 min=0 max=50>
+	<input type=checkbox name="A1use" id="A1" >Use
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<output name="A1output" ></output>
+	<br>
+	<label for "A1S" >A1S:</label>
+	<input type="date" name="A1S" >
+	<br><br>
+
+	<label for "A2" >A2:</label>
+	<input  name="A2input" type="range"  value="0" step=1 min=0 max=50>
+	<input type=checkbox name="A2use" id="A2" >Use
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<output name="A2output" ></output>
+	<br>
+	<label for "A2S"  >A2S:</label>
+	<input type="date" name="A2S" >
+	<br><br>
+	
+	<label for "PART" >Additive Partic pts:</label>
+	<input type=text name="PART"   id="PART" 
+	autocomplete=off>
+	<br><br>
+	
+	</fieldset>
+
+<input type=submit>	
+</fieldset>
+</form>
+
+<br><br>
+<p><a href="gradesHTML.txt">gradesHTML</a></p>
+<p><a href="gradesPHP.txt">gradesPHP</a></p>
+<p><a href="myfunctionsPHP.txt">myfunctionsPHP</a></p>
+
+<br>
+<p><a href="statement.txt">Assignment 2 Statement</a></p>
+
+</html>
+	
