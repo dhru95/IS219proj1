@@ -1,60 +1,54 @@
-<?php
-   $car_orders[0]['model'] = 'taurus';
-   $car_orders[0]['engine'] = 'V6';
-   $car_orders[0]['color'] = 'blue';
-   $car_orders[1]['model'] = 'mustang';
-   $car_orders[1]['engine'] = 'V6';
-   $car_orders[1]['color'] = 'blue';
-   $car_orders[2]['model'] = 'focus';
-   $car_orders[2]['engine'] = 'V6';
-   $car_orders[2]['color'] = 'blue';
-  if(empty($_GET)) {
-    foreach($car_orders as $car_order) {
-      $i++;
-      $car_order_num = $i - 1;
-      echo '<a href=' . '"http://web.njit.edu/~kwilliam/is218/cars.php?car_order=' . $car_order_num . '"' . '>Car Order ' . $i . ' </a>';
-      echo '</p>';
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bare - Start Bootstrap Template (for IS219)</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+    body {
+        padding-top: 70px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     }
-  }
-  $car_order = $car_orders[$_GET['car_order']];
-  
-   foreach($car_order as $key => $value) {
-    echo $key . ': ' . $value . "<br>\n";
-   }
-   
-  
-  abstract class car {
-    protected $engine;
-    protected $wheels = 4;
-    protected $doors;
-    protected $length;
-    protected $weight;
-    protected $color;
-  
-    public function setColor($color) {
-      $this->color = $color;
-    }
-    public function setEngine(engine $engine) {
-      $this->engine = $engine;
-    }
-  }
- 
-  abstract class ford extends car {}
-  class taurus extends ford {
-  
-     public function __construct() {
-       $this->doors = '4';
-       $this->length = '2000cm';
-       $this->weight = '1700kg';
-       
-       $engine = new engine;
-       $this->setEngine($engine);
-     
-     }
-    
-  }
-  class engine {}
-?>
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Start Bootstrap</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
                     <li>
                         <a href="#">About</a>
                     </li>
